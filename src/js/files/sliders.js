@@ -111,14 +111,9 @@ function initSliders() {
 			slidesPerView: 2,
 			spaceBetween: 20,
 			centeredSlides: true,
-			//autoHeight: true,
 			speed: 500,
 
-			//touchRatio: 0,
-			//simulateTouch: false,
 			loop: true,
-			//preloadImages: false,
-			//lazy: true,
 			effect: 'coverflow',
 			coverflowEffect: {
 				rotate: 0,
@@ -127,39 +122,89 @@ function initSliders() {
 				scale: 1,
 				modifier: 1,
 			},
-
 			navigation: {
 				prevEl: '.what-slider .swiper-button-prev',
 				nextEl: '.what-slider .swiper-button-next',
 			},
-			/*
-			// Брейкпоінти
-			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-			// Події
-			on: {
-
-			}
 		});
 	}
+
+
+	// if (document.querySelector('.what-slider-1')) {
+	// 	new Swiper('.what-slider-1', { 
+	// 		modules: [Navigation, EffectCoverflow],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerView: 2,
+	// 		spaceBetween: 20,
+	// 		centeredSlides: true,
+	// 		speed: 500,
+
+	// 		loop: true,
+	// 		effect: 'coverflow',
+	// 		coverflowEffect: {
+	// 			rotate: 0,
+	// 			slideShadows: false,
+	// 			depth: 100,
+	// 			scale: 1,
+	// 			modifier: 1,
+	// 		},
+	// 		navigation: {
+	// 			prevEl: '.what-slider-1 .swiper-button-prev',
+	// 			nextEl: '.what-slider-1 .swiper-button-next',
+	// 		},
+	// 	});
+	// }
+	// if (document.querySelector('.what-slider-2')) {
+	// 	new Swiper('.what-slider-2', { 
+	// 		modules: [Navigation, EffectCoverflow],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerView: 2,
+	// 		spaceBetween: 20,
+	// 		centeredSlides: true,
+	// 		speed: 500,
+
+	// 		loop: true,
+	// 		effect: 'coverflow',
+	// 		coverflowEffect: {
+	// 			rotate: 0,
+	// 			slideShadows: false,
+	// 			depth: 100,
+	// 			scale: 1,
+	// 			modifier: 1,
+	// 		},
+	// 		navigation: {
+	// 			prevEl: '.what-slider-2 .swiper-button-prev',
+	// 			nextEl: '.what-slider-2 .swiper-button-next',
+	// 		},
+	// 	});
+	// }
+	// if (document.querySelector('.what-slider-3')) {
+	// 	new Swiper('.what-slider-3', { 
+	// 		modules: [Navigation, EffectCoverflow],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerView: 2,
+	// 		spaceBetween: 20,
+	// 		centeredSlides: true,
+	// 		speed: 500,
+
+	// 		loop: true,
+	// 		effect: 'coverflow',
+	// 		coverflowEffect: {
+	// 			rotate: 0,
+	// 			slideShadows: false,
+	// 			depth: 100,
+	// 			scale: 1,
+	// 			modifier: 1,
+	// 		},
+	// 		navigation: {
+	// 			prevEl: '.what-slider-3 .swiper-button-prev',
+	// 			nextEl: '.what-slider-3 .swiper-button-next',
+	// 		},
+	// 	});
+	// }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 // function initSlidersScroll() {

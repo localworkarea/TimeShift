@@ -3379,8 +3379,7 @@
             navigation: {
                 prevEl: ".what-slider .swiper-button-prev",
                 nextEl: ".what-slider .swiper-button-next"
-            },
-            on: {}
+            }
         });
     }
     window.addEventListener("load", (function(e) {

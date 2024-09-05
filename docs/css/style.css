@@ -159,18 +159,12 @@ body * {
   scrollbar-width: thin;
   scrollbar-color: #01001e #b7b7b7
 }
-.benefits,
-.expectations,
-.hero,
 .menu__body,
-.what {
+.wrapper {
   position: relative
 }
-.benefits::before,
-.expectations::before,
-.hero::before,
-.menu__body::before,
-.what::before {
+.menu__body::after,
+.wrapper::after {
   content: "";
   position: absolute;
   pointer-events: none;
@@ -186,9 +180,10 @@ body * {
   background-size: cover;
   background-position: center
 }
+.about-hero__body:before,
 .benefits__body:before,
 .expectations__list:before,
-.what__list:before {
+.what:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -302,6 +297,31 @@ body * {
 }
 .menu__item {
   overflow: hidden
+}
+.menu-open .menu__item:nth-child(1) .menu__link {
+  transition: color .3s ease,-webkit-transform .4s ease .3s;
+  transition: color .3s ease,transform .4s ease .3s;
+  transition: color .3s ease,transform .4s ease .3s,-webkit-transform .4s ease .3s
+}
+.menu-open .menu__item:nth-child(2) .menu__link {
+  transition: color .3s ease,-webkit-transform .4s ease .35s;
+  transition: color .3s ease,transform .4s ease .35s;
+  transition: color .3s ease,transform .4s ease .35s,-webkit-transform .4s ease .35s
+}
+.menu-open .menu__item:nth-child(3) .menu__link {
+  transition: color .3s ease,-webkit-transform .4s ease .4s;
+  transition: color .3s ease,transform .4s ease .4s;
+  transition: color .3s ease,transform .4s ease .4s,-webkit-transform .4s ease .4s
+}
+.menu-open .menu__item:nth-child(4) .menu__link {
+  transition: color .3s ease,-webkit-transform .4s ease .45s;
+  transition: color .3s ease,transform .4s ease .45s;
+  transition: color .3s ease,transform .4s ease .45s,-webkit-transform .4s ease .45s
+}
+.menu-open .menu__item:nth-child(5) .menu__link {
+  transition: color .3s ease,-webkit-transform .4s ease .5s;
+  transition: color .3s ease,transform .4s ease .5s;
+  transition: color .3s ease,transform .4s ease .5s,-webkit-transform .4s ease .5s
 }
 .menu__link {
   font-weight: 800;
@@ -536,18 +556,10 @@ body * {
   height: min-content
 }
 .about-hero__body:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  aspect-ratio: 1/1;
-  width: 110%;
-  border-radius: 50%;
-  background-color: #0010eb;
-  -webkit-filter: blur(100px);
-  filter: blur(100px)
+  background-image: url(../img/bg/about-hero-bg.webp);
+  width: 200%;
+  height: 200%;
+  opacity: .8
 }
 .about-hero__item {
   position: relative
@@ -691,9 +703,6 @@ body * {
   text-align: center;
   opacity: .75
 }
-.benefits__body:before {
-  background-image: url(../img/bg/benefits-bg.svg)
-}
 .benefits__img {
   box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
   border-radius: 1.875rem;
@@ -705,6 +714,7 @@ body * {
   aspect-ratio: 1
 }
 .what {
+  position: relative;
   z-index: 1
 }
 .what__list {
@@ -829,6 +839,26 @@ body * {
 .swiper-button-lock {
   display: none!important
 }
+.swiper-android .swiper-slide,
+.swiper-wrapper {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0)
+}
+.swiper-pointer-events {
+  touch-action: pan-y
+}
+.swiper-pointer-events.swiper-vertical {
+  touch-action: pan-x
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform,-webkit-transform
+}
 .swiper-slide-invisible-blank {
   visibility: hidden
 }
@@ -946,50 +976,6 @@ body * {
   width: 1px;
   height: var(--swiper-virtual-size)
 }
-.swiper-horizontal>.swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  bottom: 10px;
-  left: 0;
-  width: 100%
-}
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 0 var(--swiper-pagination-bullet-horizontal-gap,4px)
-}
-.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  white-space: nowrap
-}
-.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
-  transition: .2s transform,.2s left
-}
-.swiper-horizontal.swiper-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
-  transition: .2s transform,.2s right
-}
-.swiper-creative .swiper-slide {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow: hidden;
-  transition-property: opacity,height,-webkit-transform;
-  transition-property: transform,opacity,height;
-  transition-property: transform,opacity,height,-webkit-transform
-}
-.swiper-cards {
-  overflow: visible
-}
-.swiper-cards .swiper-slide {
-  -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  overflow: hidden
-}
 @media (min-width:23.81125em) {
   .header__link {
     padding-left: 2.1875rem;
@@ -1005,11 +991,8 @@ body * {
   }
 }
 @media (min-width:30.06125em) {
-  .benefits::before,
-  .expectations::before,
-  .hero::before,
-  .menu__body::before,
-  .what::before {
+  .menu__body::after,
+  .wrapper::after {
     background-size: 18.75rem
   }
   .hero,
@@ -1033,31 +1016,6 @@ body * {
     flex-direction: column;
     justify-content: center
   }
-  .menu-open .menu__item:nth-child(1) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .3s;
-    transition: color .3s ease,transform .4s ease .3s;
-    transition: color .3s ease,transform .4s ease .3s,-webkit-transform .4s ease .3s
-  }
-  .menu-open .menu__item:nth-child(2) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .35s;
-    transition: color .3s ease,transform .4s ease .35s;
-    transition: color .3s ease,transform .4s ease .35s,-webkit-transform .4s ease .35s
-  }
-  .menu-open .menu__item:nth-child(3) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .4s;
-    transition: color .3s ease,transform .4s ease .4s;
-    transition: color .3s ease,transform .4s ease .4s,-webkit-transform .4s ease .4s
-  }
-  .menu-open .menu__item:nth-child(4) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .45s;
-    transition: color .3s ease,transform .4s ease .45s;
-    transition: color .3s ease,transform .4s ease .45s,-webkit-transform .4s ease .45s
-  }
-  .menu-open .menu__item:nth-child(5) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .5s;
-    transition: color .3s ease,transform .4s ease .5s;
-    transition: color .3s ease,transform .4s ease .5s,-webkit-transform .4s ease .5s
-  }
   .menu-open .menu__address,
   .menu-open .menu__block {
     transition-delay: .5s
@@ -1072,17 +1030,18 @@ body * {
     grid-template-columns: 1fr 58%
   }
   .benefits__body:before {
+    background-image: url(../img/bg/benefits-pc.webp);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     width: 200%;
     height: 350%
   }
-  .what__list:before {
+  .what:before {
     width: 150%;
-    aspect-ratio: 1280/1986;
+    height: 270%;
     -webkit-transform: translate(-50%,-45%);
     transform: translate(-50%,-45%);
-    background-image: url(../img/bg/games-pc.svg)
+    background-image: url(../img/bg/games-pc.webp)
   }
 }
 @media (min-width:37.56125em) {
@@ -1412,11 +1371,8 @@ body * {
   }
 }
 @media (max-width:30.06125em) {
-  .benefits::before,
-  .expectations::before,
-  .hero::before,
-  .menu__body::before,
-  .what::before {
+  .menu__body::after,
+  .wrapper::after {
     background-size: 6.25rem
   }
   .hero,
@@ -1439,7 +1395,7 @@ body * {
     margin-bottom: 1.5625rem
   }
   .menu__body {
-    transition: clip-path .45s ease;
+    transition: clip-path .5s ease;
     background-image: url(../img/bg/hero-mb-2.webp)
   }
   .menu__container {
@@ -1451,31 +1407,6 @@ body * {
   .menu__container {
     row-gap: 3.125rem;
     justify-content: space-between
-  }
-  .menu-open .menu__item:nth-child(1) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .1s;
-    transition: color .3s ease,transform .4s ease .1s;
-    transition: color .3s ease,transform .4s ease .1s,-webkit-transform .4s ease .1s
-  }
-  .menu-open .menu__item:nth-child(2) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .15s;
-    transition: color .3s ease,transform .4s ease .15s;
-    transition: color .3s ease,transform .4s ease .15s,-webkit-transform .4s ease .15s
-  }
-  .menu-open .menu__item:nth-child(3) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .2s;
-    transition: color .3s ease,transform .4s ease .2s;
-    transition: color .3s ease,transform .4s ease .2s,-webkit-transform .4s ease .2s
-  }
-  .menu-open .menu__item:nth-child(4) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .25s;
-    transition: color .3s ease,transform .4s ease .25s;
-    transition: color .3s ease,transform .4s ease .25s,-webkit-transform .4s ease .25s
-  }
-  .menu-open .menu__item:nth-child(5) .menu__link {
-    transition: color .3s ease,-webkit-transform .4s ease .3s;
-    transition: color .3s ease,transform .4s ease .3s;
-    transition: color .3s ease,transform .4s ease .3s,-webkit-transform .4s ease .3s
   }
   .menu-open .menu__address,
   .menu-open .menu__block {
@@ -1547,15 +1478,16 @@ body * {
     grid-template-columns: 1fr 70%
   }
   .benefits__body:before {
-    -webkit-transform: translate(-50%,-47%);
-    transform: translate(-50%,-47%);
+    background-image: url(../img/bg/benefits-mb.webp);
+    -webkit-transform: translate(-50%,-60%);
+    transform: translate(-50%,-60%);
     width: 400%;
     height: 400%
   }
-  .what__list:before {
+  .what:before {
+    width: 110%;
     height: 200%;
-    aspect-ratio: 1280/1986;
-    background-image: url(../img/bg/games-mb.svg)
+    background-image: url(../img/bg/games-mb.webp)
   }
 }
 @media (max-width:23.81125em) {

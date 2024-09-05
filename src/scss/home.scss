@@ -1,7 +1,6 @@
 .hero {
   padding-bottom: toRem(80);
   @extend %bgHeroHeaderMenu;
-  @extend %bgGeneral;
   // .hero__container
   &__container {
     display: grid;
@@ -91,17 +90,12 @@
     position: relative;
     height: min-content;
     @include adaptiveValue("gap", 60, 40,0,1440.98,480.98);
+    @extend %sectionsBgBefore;
     &:before {
-      content:'';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      aspect-ratio: 1/1;
-      width: 110%;
-      border-radius: 50%;
-      background-color:#0010eb;
-      filter: blur(100px);
+      background-image:url(../img/bg/about-hero-bg.png);
+      width: 200%;
+      height: 200%;
+      opacity: 0.8;
     }
 	}
   // .about-hero__item
@@ -275,7 +269,6 @@
 
 // ==== EXPECTATIONS SECTION ===========================================
 .expectations {
-  @extend %bgGeneral;
   @extend %paddingSects;
 	// .expectations__container
 	&__container {
@@ -348,7 +341,6 @@
 
 // ==== BENEFITS SECTION ===========================================
 .benefits {
-  @extend %bgGeneral;
   @extend %paddingSects;
   // .benefits__container
   &__container {
@@ -385,14 +377,15 @@
     }
     @extend %sectionsBgBefore;
     &:before {
-      background-image:url(../img/bg/benefits-bg.svg);
       @media (min-width:$mobileSmall){
+        background-image:url(../img/bg/benefits-pc.png);
         transform: translate(-50%, -50%);
         width: 200%;
         height: 350%;
       }
       @media (max-width:$mobileSmall){
-        transform: translate(-50%, -47%);
+        background-image:url(../img/bg/benefits-mb.png);
+        transform: translate(-50%, -60%);
         width: 400%;
         height: 400%;
       }
@@ -433,9 +426,23 @@
 
 // ==== WHAT SECTION ===========================================
 .what {
+  position: relative;
   z-index: 1;
-  @extend %bgGeneral;
   @extend %paddingSects;
+  @extend %sectionsBgBefore;
+  &:before {
+    @media (min-width:$mobileSmall){
+      width: 150%;
+      height: 270%;
+      transform: translate(-50%, -45%);
+      background-image:url(../img/bg/games-pc.png);
+    }
+    @media (max-width:$mobileSmall){
+      width: 110%;
+      height: 200%;
+      background-image:url(../img/bg/games-mb.png);
+    }
+  }
   // .what__container
   &__container {
   }
@@ -452,22 +459,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     @include adaptiveValue("gap", 40, 18);
-    @extend %sectionsBgBefore;
-    &:before {
-      @media (min-width:$mobileSmall){
-        width: 150%;
-        // height: 270%;
-        aspect-ratio: 1280 / 1986;
-        transform: translate(-50%, -45%);
-        background-image:url(../img/bg/games-pc.svg);
-      }
-      @media (max-width:$mobileSmall){
-        // width: 170%;
-        height: 200%;
-        aspect-ratio: 1280 / 1986;
-        background-image:url(../img/bg/games-mb.svg);
-      }
-    }
   }
   // .what__item
   &__item {

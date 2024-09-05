@@ -141,7 +141,7 @@
         background-image: url(../img/bg/hero-pc-2.png);
       }
       @media (max-width:$mobileSmall){
-        transition: clip-path .45s ease;
+        transition: clip-path .5s ease;
         background-image: url(../img/bg/hero-mb-2.png);  
       }
       .menu-open & {
@@ -183,60 +183,60 @@
     &:nth-child(1) {
       .menu__link {
         .menu-open & {
-          @media (min-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.3s;
-          }
-          @media (max-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.1s;
-          }
+          transition: color .3s ease, transform .4s ease 0.3s;
+          // @media (min-width:$mobileSmall){
+          // }
+          // @media (max-width:$mobileSmall){
+          //   transition: color .3s ease, transform .4s ease 0.1s;
+          // }
         }
       }
     }
     &:nth-child(2) {
       .menu__link {
         .menu-open & {
-          @media (min-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.35s;
-          }
-          @media (max-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.15s;
-          }
+          transition: color .3s ease, transform .4s ease 0.35s;
+          // @media (min-width:$mobileSmall){
+          // }
+          // @media (max-width:$mobileSmall){
+          //   transition: color .3s ease, transform .4s ease 0.15s;
+          // }
         }
       }
     }
     &:nth-child(3) {
       .menu__link {
         .menu-open & {
-           @media (min-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.4s;
-          }
-          @media (max-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.2s;
-          }
+          transition: color .3s ease, transform .4s ease 0.4s;
+          //  @media (min-width:$mobileSmall){
+          // }
+          // @media (max-width:$mobileSmall){
+          //   transition: color .3s ease, transform .4s ease 0.2s;
+          // }
         }
       }
     }
     &:nth-child(4) {
       .menu__link {
         .menu-open & {
-          @media (min-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.45s;
-          }
-          @media (max-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.25s;
-          }
+          transition: color .3s ease, transform .4s ease 0.45s;
+          // @media (min-width:$mobileSmall){
+          // }
+          // @media (max-width:$mobileSmall){
+          //   transition: color .3s ease, transform .4s ease 0.25s;
+          // }
         }
       }
     }
     &:nth-child(5) {
       .menu__link {
         .menu-open & {
-          @media (min-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.5s;
-          }
-          @media (max-width:$mobileSmall){
-            transition: color .3s ease, transform .4s ease 0.3s;
-          }
+          transition: color .3s ease, transform .4s ease 0.5s;
+          // @media (min-width:$mobileSmall){
+          // }
+          // @media (max-width:$mobileSmall){
+          //   transition: color .3s ease, transform .4s ease 0.3s;
+          // }
         }
       }
     }
@@ -505,6 +505,7 @@
           height: toRem(3);
           background-color: $green;
           border-radius: toRem(4);
+          // will-change: transform;
         }
         &::before {
           top: 0;

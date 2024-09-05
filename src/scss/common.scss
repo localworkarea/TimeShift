@@ -37,9 +37,17 @@ body {
     }
 }
 
+
+.wrapper {
+  @extend %bgGeneral;
+  &:after {
+    // z-index: 1;
+  }
+}
+
 %bgGeneral {
   position: relative;
-  &::before {
+  &::after {
     content: '';
     position: absolute;
     pointer-events: none;
