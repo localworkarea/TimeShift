@@ -1613,6 +1613,7 @@ body * {
   }
   .questions:before {
     width: 200%;
+    height: 200%;
     background-image: url(../img/bg/form-bg.webp)
   }
   .form-qs__items {

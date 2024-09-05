@@ -1094,6 +1094,7 @@
   &:before {
     @media (min-width:$mobileSmall){
       width: 200%;
+      height: 200%;
       background-image:url(../img/bg/form-bg.png);
     }
     @media (max-width:$mobileSmall){
