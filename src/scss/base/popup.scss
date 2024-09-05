@@ -33,6 +33,10 @@ body::after {
 	transition: visibility 0.8s ease 0s;
 	overflow: auto;
 	pointer-events: none;
+	
+	&.popup-msg {
+		padding: 0;
+	}
 	// .popup__wrapper
 	&__wrapper {
 		display: flex;
@@ -42,7 +46,10 @@ body::after {
 		min-height: 100%;
 		flex: 1 1 auto;
 		width: 100%;
-	
+		
+		.popup-msg & {
+			padding: 20px;
+		}
 	}
 	// .popup__content
 	&__content {
@@ -55,6 +62,12 @@ body::after {
 		
 		.lock & {
 			visibility: visible;
+		}
+		.popup-msg & {
+			max-width: toRem(600);
+			aspect-ratio:16/9;
+			border-radius: toRem(30);
+			border: toRem(2) solid $green;
 		}
 	}
 	// .popup__close
@@ -82,6 +95,15 @@ body::after {
 			width: 100%;
 			height: auto;
 			aspect-ratio: 16/9;
+		}
+		.popup-msg & {
+			padding: toRem(60);
+			display: grid;
+			place-items: center;
+			min-height: 100%;
+			p {
+
+			}
 		}
 	}
 }

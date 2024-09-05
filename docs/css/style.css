@@ -118,6 +118,78 @@ summary {
   min-width: 0;
   grid-column: 3/4
 }
+input[type=email],
+input[type=tel],
+input[type=text],
+textarea {
+  -webkit-appearance: none;
+  appearance: none
+}
+.input {
+  border-radius: 1.25rem;
+  width: 100%;
+  display: block;
+  padding: 0 20px;
+  border: .125rem solid rgba(255,255,255,.2);
+  caret-color: inherit;
+  min-height: 3.75rem;
+  color: rgba(255,255,255,.3);
+  outline: 0;
+  box-shadow: inset 0 3px 6px 0 rgba(0,0,0,.3);
+  background-color: rgba(0,3,39,.5)
+}
+.input._form-focus {
+  color: #fff;
+  border: .125rem solid #ddff7c
+}
+.input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  color: rgba(255,255,255,.3)
+}
+.input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+  -ms-transition: opacity .3s;
+  transition: opacity .3s;
+  color: rgba(255,255,255,.3)
+}
+.input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+  -ms-transition: opacity .3s;
+  transition: opacity .3s;
+  color: rgba(255,255,255,.3)
+}
+.input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+  transition: opacity .3s;
+  color: rgba(255,255,255,.3)
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-webkit-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus:-ms-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-ms-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+  opacity: 0
+}
+input[type=date] {
+  font-family: Rubik,sans-serif
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(30%);
+  filter: invert(30%);
+  width: 30px;
+  height: 30px
+}
+input[type=date]::-webkit-calendar-picker-indicator:focus {
+  -webkit-filter: invert(100%);
+  filter: invert(100%)
+}
+textarea.input {
+  resize: none;
+  padding: 20px
+}
 body::after {
   content: "";
   background-color: rgba(0,0,0,.5);
@@ -152,6 +224,9 @@ body::after {
   overflow: auto;
   pointer-events: none
 }
+.popup.popup-msg {
+  padding: 0
+}
 .popup__wrapper {
   display: flex;
   flex-direction: column;
@@ -160,6 +235,9 @@ body::after {
   min-height: 100%;
   flex: 1 1 auto;
   width: 100%
+}
+.popup-msg .popup__wrapper {
+  padding: 20px
 }
 .popup__content {
   opacity: 0;
@@ -171,6 +249,12 @@ body::after {
 }
 .lock .popup__content {
   visibility: visible
+}
+.popup-msg .popup__content {
+  max-width: 37.5rem;
+  aspect-ratio: 16/9;
+  border-radius: 1.875rem;
+  border: .125rem solid #ddff7c
 }
 .popup__close {
   position: absolute;
@@ -196,6 +280,12 @@ body::after {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9
+}
+.popup-msg .popup__text {
+  padding: 3.75rem;
+  display: grid;
+  place-items: center;
+  min-height: 100%
 }
 .ibg {
   width: 100%;
@@ -270,6 +360,7 @@ body * {
 .benefits__body:before,
 .expectations__list:before,
 .faq:before,
+.questions:before,
 .what:before {
   content: "";
   position: absolute;
@@ -284,7 +375,8 @@ body * {
   pointer-events: none
 }
 .item-prices,
-.item-what {
+.item-what,
+.questions__body {
   overflow: hidden;
   border-radius: 1.875rem;
   border: .125rem solid #ddff7c;
@@ -619,6 +711,58 @@ body * {
   bottom: calc(50% - .09375rem);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg)
+}
+.footer__container {
+  max-width: 69rem
+}
+.footer__head {
+  display: grid;
+  gap: 1.875rem
+}
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.875rem
+}
+.footer__logo {
+  display: block;
+  max-width: 18.4375rem;
+  margin-bottom: 1.4375rem
+}
+.footer__logo img {
+  width: 100%;
+  height: auto
+}
+.footer__social {
+  max-width: 18.9375rem;
+  gap: .625rem
+}
+.footer__address {
+  font-size: 1.375rem
+}
+.footer__address .menu__contact:not(:last-child) {
+  margin-bottom: .625rem
+}
+.footer__map {
+  border-radius: 1.875rem;
+  border: .125rem solid #ddff7c;
+  overflow: hidden
+}
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: .0625rem solid rgba(255,255,255,.1)
+}
+.footer__bottom .footer__policy,
+.footer__bottom .footer__rights {
+  opacity: .3;
+  line-height: 1.1
+}
+.footer__policy {
+  transition: opacity .3s ease
 }
 .hero {
   padding-bottom: 5rem
@@ -1177,6 +1321,26 @@ body * {
   left: 0;
   color: #5b88fe
 }
+.questions {
+  position: relative
+}
+.questions__body {
+  position: relative;
+  display: grid;
+  overflow: visible
+}
+.form-qs form {
+  display: grid;
+  gap: .625rem
+}
+.form-qs__items {
+  display: grid;
+  gap: .625rem
+}
+._sending .form-qs__submit {
+  opacity: .5;
+  pointer-events: none
+}
 .swiper {
   overflow: hidden
 }
@@ -1388,6 +1552,12 @@ body * {
   .menu-open .menu__block {
     transition-delay: .5s
   }
+  .footer__map iframe {
+    aspect-ratio: 620/257
+  }
+  .footer__bottom {
+    gap: .625rem
+  }
   .hero__title:not(:last-child) {
     margin-bottom: 1.875rem
   }
@@ -1441,6 +1611,13 @@ body * {
   .rating {
     font-size: 1.25rem
   }
+  .questions:before {
+    width: 200%;
+    background-image: url(../img/bg/form-bg.webp)
+  }
+  .form-qs__items {
+    grid-template-columns: 1fr 1fr
+  }
 }
 @media (min-width:37.56125em) {
   .header__link {
@@ -1453,6 +1630,11 @@ body * {
   }
   .about__btn {
     max-width: 20rem
+  }
+}
+@media (min-width:47.56125em) {
+  .footer__head {
+    grid-template-columns: 42% 1fr
   }
 }
 @media (min-width:48.06125em) {
@@ -1494,6 +1676,29 @@ body * {
     grid-template-columns: repeat(3,1fr)
   }
 }
+@media (min-width:56.31125em) {
+  .questions__body {
+    grid-template-columns: 1fr 57%
+  }
+  .questions__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%
+  }
+  .questions__img img {
+    width: 120%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0
+  }
+  .questions__form {
+    grid-column: 2/3
+  }
+}
 @media (min-width:61.31125em) {
   .hero__container {
     grid-template-columns: 54% 1fr
@@ -1516,6 +1721,7 @@ body * {
 }
 @media (min-width:64.06125em) {
   .about__body,
+  .questions__body,
   .spollers,
   .testimonials__slider {
     max-width: 66.5rem;
@@ -1554,6 +1760,12 @@ body * {
   }
 }
 @media (min-width:82.5em) {
+  .input {
+    font-size: 1.125rem
+  }
+  textarea.input {
+    min-height: 8.75rem
+  }
   .about__img,
   .slide-testim__body,
   .spollers__item {
@@ -1564,6 +1776,7 @@ body * {
   .expectations,
   .faq,
   .prices,
+  .questions,
   .testimonials,
   .what {
     padding-bottom: 10.625rem
@@ -1573,6 +1786,15 @@ body * {
   }
   .menu__link {
     font-size: 3.875rem
+  }
+  .footer__head {
+    padding-bottom: 2.8125rem
+  }
+  .footer__bottom {
+    padding-top: 2.5rem
+  }
+  .footer__bottom {
+    padding-bottom: 2.5rem
   }
   .hero__btns {
     gap: 1.25rem
@@ -1682,6 +1904,9 @@ body * {
   .slide-testim__content {
     row-gap: 1.25rem
   }
+  .questions__form {
+    padding: 2.5rem
+  }
 }
 @media (min-width:90.06125em) {
   .btn {
@@ -1761,6 +1986,12 @@ body * {
   }
 }
 @media (max-width:20em) {
+  .input {
+    font-size: 1rem
+  }
+  textarea.input {
+    min-height: 8.125rem
+  }
   .about__img,
   .slide-testim__body,
   .spollers__item {
@@ -1771,6 +2002,7 @@ body * {
   .expectations,
   .faq,
   .prices,
+  .questions,
   .testimonials,
   .what {
     padding-bottom: 6.25rem
@@ -1780,6 +2012,15 @@ body * {
   }
   .menu__link {
     font-size: 2.125rem
+  }
+  .footer__head {
+    padding-bottom: 1.875rem
+  }
+  .footer__bottom {
+    padding-top: 1.875rem
+  }
+  .footer__bottom {
+    padding-bottom: 1.875rem
   }
   .hero__title:not(:last-child) {
     margin-bottom: 1.25rem
@@ -1892,6 +2133,9 @@ body * {
   .slide-testim__content {
     row-gap: .875rem
   }
+  .questions__form {
+    padding: 1rem
+  }
 }
 @media (max-width:78.18625em) {
   .testimonials__body .swiper-button-next,
@@ -1922,6 +2166,15 @@ body * {
   .about-hero__item:nth-child(4) p {
     top: -2.1875rem;
     right: -3.125rem
+  }
+}
+@media (max-width:56.31125em) {
+  .questions__img {
+    display: none
+  }
+  .questions__img img {
+    max-width: 100%;
+    height: auto
   }
 }
 @media (max-width:51.31125em) {
@@ -2007,6 +2260,12 @@ body * {
   .icon-menu,
   .lng__btn {
     width: 3.75rem
+  }
+  .footer__map iframe {
+    aspect-ratio: 353/257
+  }
+  .footer__bottom {
+    gap: 1.25rem
   }
   .hero__container {
     padding-top: 8.125rem
@@ -2099,6 +2358,13 @@ body * {
   .rating {
     font-size: 1rem
   }
+  .questions:before {
+    height: 220%;
+    width: 250%;
+    background-image: url(../img/bg/circle-bg.webp);
+    -webkit-transform: translate(-50%,-50%) scaleX(-1);
+    transform: translate(-50%,-50%) scaleX(-1)
+  }
 }
 @media (max-width:23.81125em) {
   .header__link {
@@ -2135,6 +2401,12 @@ body * {
   }
 }
 @media (min-width:20em)and (max-width:82.5em) {
+  .input {
+    font-size: clamp(1rem ,.96rem + .2vw ,1.125rem)
+  }
+  textarea.input {
+    min-height: clamp(8.125rem ,7.925rem + 1vw ,8.75rem)
+  }
   .about__img,
   .slide-testim__body,
   .spollers__item {
@@ -2145,6 +2417,7 @@ body * {
   .expectations,
   .faq,
   .prices,
+  .questions,
   .testimonials,
   .what {
     padding-bottom: clamp(6.25rem ,4.85rem + 7vw ,10.625rem)
@@ -2154,6 +2427,15 @@ body * {
   }
   .menu__link {
     font-size: clamp(2.125rem ,1.565rem + 2.8vw ,3.875rem)
+  }
+  .footer__head {
+    padding-bottom: clamp(1.875rem ,1.575rem + 1.5vw ,2.8125rem)
+  }
+  .footer__bottom {
+    padding-top: clamp(1.875rem ,1.675rem + 1vw ,2.5rem)
+  }
+  .footer__bottom {
+    padding-bottom: clamp(1.875rem ,1.675rem + 1vw ,2.5rem)
   }
   .hero__btns {
     gap: clamp(.625rem ,.425rem + 1vw ,1.25rem)
@@ -2262,6 +2544,9 @@ body * {
   }
   .slide-testim__content {
     row-gap: clamp(.875rem ,.755rem + .6vw ,1.25rem)
+  }
+  .questions__form {
+    padding: clamp(1rem ,.52rem + 2.4vw ,2.5rem)
   }
 }
 @media (min-width:30.06125em)and (max-width:90.06125em) {
@@ -2423,6 +2708,9 @@ body * {
   .lng__btn:hover .icon-menu__item::after,
   .lng__btn:hover .icon-menu__item::before {
     background-color: #00074b
+  }
+  .footer__policy:hover {
+    opacity: 1
   }
   .item-what__slider .swiper-button-next:hover,
   .item-what__slider .swiper-button-prev:hover,

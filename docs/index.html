@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240905201925">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240905234347">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -173,16 +173,16 @@
 					<div class="benefits__body">
 						<p>Игры, которые раскроют каждого сотрудника, ресторан с едой и напитками. Профессиональный персонал от администратора который научит вас играть, до официанта который позаботится о вашем комфортном отдыхе</p>
 						<div class="benefits__img">
-							<img class="ibg" src="img/pictures/benefit-1.webp" width="290" height="290" alt="Image">
+							<img loading="lazy" class="ibg" src="img/pictures/benefit-1.webp" width="290" height="290" alt="Image">
 						</div>
 						<div class="benefits__img">
-							<img class="ibg" src="img/pictures/benefit-2.webp" width="290" height="290" alt="Image">
+							<img loading="lazy" class="ibg" src="img/pictures/benefit-2.webp" width="290" height="290" alt="Image">
 						</div>
 						<div class="benefits__img">
-							<img class="ibg" src="img/pictures/benefit-3.webp" width="290" height="290" alt="Image">
+							<img loading="lazy" class="ibg" src="img/pictures/benefit-3.webp" width="290" height="290" alt="Image">
 						</div>
 						<div class="benefits__img">
-							<img class="ibg" src="img/pictures/benefit-4.webp" width="290" height="290" alt="Image">
+							<img loading="lazy" class="ibg" src="img/pictures/benefit-4.webp" width="290" height="290" alt="Image">
 						</div>
 					</div>
 				</div>
@@ -332,7 +332,7 @@
 								30€/per person
 							</div>
 							<div class="item-prices__img">
-								<img class="ibg" src="img/pictures/prices-1.webp" width="353" height="177" alt="Image">
+								<img loading="lazy" class="ibg" src="img/pictures/prices-1.webp" width="353" height="177" alt="Image">
 							</div>
 							<div data-showmore="items" class="item-prices__body">
 								<div data-showmore-content="3" class="item-prices__list">
@@ -360,7 +360,7 @@
 								50€/per person
 							</div>
 							<div class="item-prices__img">
-								<img class="ibg" src="img/pictures/prices-2.webp" width="353" height="177" alt="Image">
+								<img loading="lazy" class="ibg" src="img/pictures/prices-2.webp" width="353" height="177" alt="Image">
 							</div>
 							<div data-showmore="items" class="item-prices__body">
 								<div data-showmore-content="3" class="item-prices__list">
@@ -389,7 +389,7 @@
 								75€/per person
 							</div>
 							<div class="item-prices__img">
-								<img class="ibg" src="img/pictures/prices-3.webp" width="353" height="177" alt="Image">
+								<img loading="lazy" class="ibg" src="img/pictures/prices-3.webp" width="353" height="177" alt="Image">
 							</div>
 							<div data-showmore="items" class="item-prices__body">
 								<div data-showmore-content="3" class="item-prices__list">
@@ -496,16 +496,16 @@
 						<div class="about__right">
 							<div class="about__cards">
 								<div class="about__img">
-									<img class="ibg" src="img/pictures/about-1.webp" width="200" height="231" alt="Image">
+									<img loading="lazy" class="ibg" src="img/pictures/about-1.webp" width="200" height="231" alt="Image">
 								</div>
 								<div class="about__img">
-									<img class="ibg" src="img/pictures/about-2.webp" width="290" height="231" alt="Image">
+									<img loading="lazy" class="ibg" src="img/pictures/about-2.webp" width="290" height="231" alt="Image">
 								</div>
 								<div class="about__img">
-									<img class="ibg" src="img/pictures/about-3.webp" width="290" height="231" alt="Image">
+									<img loading="lazy" class="ibg" src="img/pictures/about-3.webp" width="290" height="231" alt="Image">
 								</div>
 								<div class="about__img">
-									<img class="ibg" src="img/pictures/about-4.webp" width="200" height="231" alt="Image">
+									<img loading="lazy" class="ibg" src="img/pictures/about-4.webp" width="200" height="231" alt="Image">
 								</div>
 							</div>
 						</div>
@@ -589,14 +589,29 @@
 						Остались вопросы?<br> <span>Мы поможем!</span>
 					</h2>
 					<div class="questions__body">
-						<img class="questions__img" src="img/pictures/women-vr.webp" width="533" height="536" alt="Image">
+						<div class="questions__img">
+							<img loading="lazy" src="img/pictures/women-vr.webp" width="533" height="536" alt="Image">
+						</div>
 						<div class="questions__form form-qs">
-							<form data-dev data-popup-message="#popup-msg" action="" method="POST">
+							<form data-dev data-popup-message="#popupMsg" action="" method="POST">
 								<div class="form-qs__items">
 									<div class="form-qs__item">
-										<input type="text" name="name" placeholder="Введіть ваше ім’я" data-error="Error" data-required class="form-qs__input input">
+										<input type="text" name="name" placeholder="Имя" required class="form-qs__input input">
+									</div>
+									<div class="form-qs__item">
+										<input type="date" name="date" required class="form-qs__input input">
 									</div>
 								</div>
+								<div class="form-qs__item">
+									<input type="tel" name="tel" placeholder="Номер телефона" required class="form-qs__input input">
+								</div>
+								<div class="form-qs__item">
+									<input type="email" name="email" placeholder="E-mail" required class="form-qs__input input">
+								</div>
+								<div class="form-qs__item">
+									<textarea name="comment" placeholder="Тут укажите особенности и детали корпоратива, если они есть. Например: колличество людей, тематические вечеринки и т.д." class="form-qs__textarea input"></textarea>
+								</div>
+								<button type="submit" class="form-qs__submit btn btn_one">Оставить заявку</button>
 							</form>
 						</div>
 					</div>
@@ -605,6 +620,39 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
+				<div class="footer__head">
+					<div class="footer__left">
+						<div class="footer__top">
+							<a href="#" class="footer__logo">
+								<img src="img/icons/logo.svg" width="202" height="28" alt="logo Time Shift">
+							</a>
+							<div class="footer__social social">
+								<p>Место для идеального корпоратива!</p>
+								<a href="#" class="social__link">
+									<svg class="ibg ibg--contain" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M0 11.7667C0 5.26812 5.26812 0 11.7667 0H24.2335C30.732 0 36.0001 5.26812 36.0001 11.7667V24.2335C36.0001 30.732 30.732 36.0001 24.2335 36.0001H11.7667C5.26812 36.0001 0 30.732 0 24.2335V11.7667ZM17.9998 22.7872C20.6439 22.7872 22.7873 20.6438 22.7873 17.9997C22.7873 15.3557 20.6439 13.2123 17.9998 13.2123C15.3558 13.2123 13.2123 15.3557 13.2123 17.9997C13.2123 20.6438 15.3558 22.7872 17.9998 22.7872ZM17.9998 26.7095C22.8101 26.7095 26.7096 22.81 26.7096 17.9997C26.7096 13.1895 22.8101 9.29003 17.9998 9.29003C13.1896 9.29003 9.29013 13.1895 9.29013 17.9997C9.29013 22.81 13.1896 26.7095 17.9998 26.7095ZM27.8717 9.28921C29.1544 9.28921 30.1943 8.24935 30.1943 6.96662C30.1943 5.68389 29.1544 4.64403 27.8717 4.64403C26.589 4.64403 25.5491 5.68389 25.5491 6.96662C25.5491 8.24935 26.589 9.28921 27.8717 9.28921Z" fill="#30ACFF" />
+									</svg>
+								</a>
+								<a href="#" class="social__link">
+									<svg class="ibg ibg--contain" width="18" height="36" viewBox="0 0 18 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12 20.7H16.2857L18 13.5H12V9.9C12 8.046 12 6.3 15.4286 6.3H18V0.252C17.4411 0.1746 15.3309 0 13.1023 0C8.448 0 5.14286 2.9826 5.14286 8.46V13.5H0V20.7H5.14286V36H12V20.7Z" fill="#30ACFF" />
+									</svg>
+								</a>
+							</div>
+						</div>
+						<address class="footer__address">
+							<a href="tel:+421 952 153 492" class="menu__contact tel" aria-label="контактный номер телефона">+421 952 153 492</a>
+							<a href="https://maps.app.goo.gl/phAfRLhP6kPn9knz7" class="menu__contact loc" aria-label="гугл карты">Bratislava, Grösslingová 7</a>
+						</address>
+					</div>
+					<div class="footer__map">
+						<iframe class="ibg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.2663072022656!2d17.114167999999996!3d48.1436709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8943db9a590f%3A0x54bb8fd47e3a1a48!2sGr%C3%B6sslingov%C3%A1%206642%2F7%2C%20811%2009%20Bratislava%2C%20Slovakia!5e0!3m2!1sen!2sua!4v1725567693459!5m2!1sen!2sua" width="600" height="336" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<a href="#" class="footer__policy" aria-label="ссылка на политику конфиденциальности">Политика конфиденциальности</a>
+					<p class="footer__rights">Time Shift 2024 © All rights reserved</p>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -622,7 +670,27 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240905201925"></script>
+
+
+
+	<div id="popupMsg" aria-hidden="true" class="popup popup-msg">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+						<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+					</svg>
+				</button>
+				<div class="popup__text">
+					<p class="title-main">
+						Ваша заявка принята!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240905234347"></script>
 </body>
 
 </html>

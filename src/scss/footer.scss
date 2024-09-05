@@ -1,3 +1,104 @@
-//====================================================================================================
+.footer {
+  // .footer__container
+  &__container {
+    max-width: toRem(1104);
+  }
+  // .footer__head
+  &__head {
+    display: grid;
+    gap: toRem(30);
+    @include adaptiveValue("padding-bottom", 45, 30);
+    @media (min-width:toEm(760.98)){
+      grid-template-columns: 42% 1fr;
+    }
+  }
+  // .footer__left
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: toRem(30);
+  }
+  // .footer__top
+  &__top {
+  }
+  // .footer__logo
+  &__logo {
+    display: block;
+    max-width: toRem(295);
+    margin-bottom: toRem(23);
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  // .footer__social
+  &__social {
+    max-width: toRem(303);
+    gap: toRem(10);
+    p {
+    }
+  }
+  // .footer__address
+  &__address {
+    font-size: toRem(22);
+    .menu__contact {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+  // .footer__map
+  &__map {
+    border-radius: toRem(30);
+    border: toRem(2) solid $green;
+    overflow: hidden;
+    iframe {
+      @media (min-width:$mobileSmall){
+        aspect-ratio: 620/257;
+      }
+      @media (max-width:$mobileSmall){
+        aspect-ratio: 353/257;
+      }
+    }
+  }
+  // .footer__bottom
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: toRem(1) solid rgba(255,255,255,0.1);
+    @include adaptiveValue("padding-top", 40, 30);
+    @include adaptiveValue("padding-bottom", 40, 30);
+    .footer__policy,
+    .footer__rights {
+      opacity: .3;
+      line-height: 1.1;
+    }
+    @media (min-width:$mobileSmall){
+      gap: toRem(10);
+    }
+    @media (max-width:$mobileSmall){
+      gap: toRem(20);
+    }
+  }
+  // .footer__policy
+  &__policy {
+    transition: opacity .3s ease;
+    @media (any-hover: hover){
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+  // .footer__rights
+  &__rights {
+  }
+}
 
-//====================================================================================================
+.menu {
+  // .menu__contact
+  &__contact {
+  }
+}

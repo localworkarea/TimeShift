@@ -593,8 +593,6 @@
 
 
 
-
-
 // ==== PRICES SECTION ===========================================
 .prices {
   @extend %paddingSects;
@@ -1089,3 +1087,103 @@
 
 
 // ==== QUESTIONS SECTION ===========================================
+.questions {
+  position: relative;
+  @extend %paddingSects;
+  @extend %sectionsBgBefore;
+  &:before {
+    @media (min-width:$mobileSmall){
+      width: 200%;
+      background-image:url(../img/bg/form-bg.png);
+    }
+    @media (max-width:$mobileSmall){
+      height: 220%;
+      width: 250%;
+      background-image:url(../img/bg/circle-bg.png);
+      transform: translate(-50%, -50%) scaleX(-1);
+    }
+  }
+  // .questions__container
+  &__container {
+  }
+  // .questions__title
+  &__title {
+  }
+  // .questions__body
+  &__body {
+    position: relative;
+    display: grid;
+    @extend %cardWrapperBody;
+    overflow: visible;
+    @extend %maxWidthWrapper1024;
+    @media (min-width:toEm(900.98)){
+      grid-template-columns: 1fr 57%;
+    }
+  }
+  // .questions__img
+  &__img {
+    @media (min-width:toEm(900.98)){
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      grid-column: 1/2;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: toEm(900.98)){
+      display: none;
+    }
+    img {
+      @media (min-width:toEm(900.98)){
+        width: 120%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      @media (max-width:toEm(900.98)){
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  // .questions__form
+  &__form {
+    @include adaptiveValue("padding", 40, 16);
+    @media (min-width:toEm(900.98)){
+      grid-column: 2/3;
+    }
+  }
+}
+
+.form-qs {
+  form {
+    display: grid;
+    gap: toRem(10);
+  }
+  // .form-qs__items
+  &__items {
+    display: grid;
+    gap: toRem(10);
+    @media (min-width:$mobileSmall){
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  // .form-qs__item
+  &__item {
+  }
+  // .form-qs__input
+  &__input {
+  }
+  // .form-qs__textarea
+  &__textarea {
+    
+  }
+  // .form-qs__submit
+  &__submit {
+    ._sending & {
+      opacity: .5;
+      pointer-events: none;
+    }
+  }
+}
