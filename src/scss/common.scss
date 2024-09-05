@@ -1,0 +1,153 @@
+
+body {
+  background-color: #010039;
+    // Webkit-браузеры (Chrome, Safari, Edge)
+    &::-webkit-scrollbar {
+      width: 6px; /* Ширина вертикального скроллбара */
+      height: 12px; /* Высота горизонтального скроллбара */
+    }
+    
+    &::-webkit-scrollbar-track {
+      // Цвет фона дорожки скроллбара
+      background-color: #B7B7B7; 
+      // Закругленные углы дорожки скроллбара
+      // border-radius: 0px; 
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      // Цвет ползунка скроллбара 
+      background-color: #01001E;
+      // Закругленные углы ползунка
+      border-radius: 3px;
+      // Отступ между ползунком и дорожкой
+      // border: 1px solid #00074B;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+      // Цвет ползунка при наведении 
+      background-color: #00074B;
+    }
+  
+    // Firefox
+    * {
+      // Ширина скроллбара: thin (тонкий) или auto (стандартный)
+      scrollbar-width: thin;
+      // Цвета ползунка и дорожки скроллбара
+      scrollbar-color: #01001E #B7B7B7;
+    }
+}
+
+%bgGeneral {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    z-index: 0;
+    background-image: url('../img/bg/bg.png');
+    opacity: 0.2;
+    background-repeat: repeat;
+    @media (min-width:$mobileSmall){
+      background-size: toRem(300);
+    }
+    @media (max-width:$mobileSmall){
+      background-size: toRem(100);
+    }
+  }
+}
+%bgHeroHeaderMenu {
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  @media (min-width:$mobileSmall){
+    background-image: url(../img/bg/hero-pc.png);
+  }
+  @media (max-width:$mobileSmall){
+    background-image: url(../img/bg/hero-mb.png);  
+  }
+}
+
+%sectionsBgBefore {
+  &:before {
+    content:'';
+     position: absolute;
+     z-index: -1;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: center;
+     pointer-events: none;
+   }
+}
+
+.btn {
+  display: grid;
+  place-items: center;
+  border: toRem(2) solid $green;
+  box-shadow: 0 5px 20px 0 rgba(221, 255, 124, 0.5);
+  width: 100%;
+  font-weight: 500;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
+  @include adaptiveValue("border-radius", 20,17,0,1440.98,480.98);
+  @include adaptiveValue("min-height", 70, 60,0,1440.98,480.98);
+  @include adaptiveValue("font-size", 20, 16,0,1440.98,480.98);
+  @media (any-hover: hover){
+    &:hover{
+      box-shadow: 0 0px 10px 0 rgba(221, 255, 124, 0.5);
+    }
+  }
+  // .btn_one
+  &_one {
+    background-color: $green;
+    color: $dark;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+        color:$green;
+      }
+    }
+  }
+  // .btn_two
+  &_two {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: $green;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $green;
+        color: $dark;
+      }
+    }
+  }
+  // .btn_three
+  &_three {
+    color: $green;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: $green;
+        color: $dark;
+      }
+    }
+  }
+}
+
+
+.title-main {
+  font-weight: 800;
+  text-align: center;
+  @include adaptiveValue("font-size", 62,32,0,1440.98,480.98 );
+  span {
+    color: $green;
+  }
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 50, 25,0,1440.98,480.98);
+  }
+}
+
+%paddingSects {
+  @include adaptiveValue("padding-bottom", 170, 100);
+}
