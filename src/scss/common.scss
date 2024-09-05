@@ -57,7 +57,7 @@ body {
     opacity: 0.2;
     background-repeat: repeat;
     @media (min-width:$mobileSmall){
-      background-size: toRem(300);
+      background-size: toRem(200);
     }
     @media (max-width:$mobileSmall){
       background-size: toRem(100);
@@ -91,6 +91,26 @@ body {
    }
 }
 
+
+%cardWrapperBody {
+  overflow: hidden;
+  border-radius: toRem(30);
+  border: toRem(2) solid $green;
+  box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(135deg, #00109c 0%, #000852 100%);
+}
+
+%borRadius30-20 {
+  @include adaptiveValue("border-radius", 30,18);
+}
+
+%maxWidthWrapper1024 {
+  @media (min-width:toEm(1024.98)){
+      max-width: toRem(1064);
+      margin-inline: auto;
+  }
+}
+
 .btn {
   display: grid;
   place-items: center;
@@ -98,8 +118,7 @@ body {
   box-shadow: 0 5px 20px 0 rgba(221, 255, 124, 0.5);
   width: 100%;
   font-weight: 500;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+
   transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
   @include adaptiveValue("border-radius", 20,17,0,1440.98,480.98);
   @include adaptiveValue("min-height", 70, 60,0,1440.98,480.98);
@@ -111,6 +130,8 @@ body {
   }
   // .btn_one
   &_one {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     background-color: $green;
     color: $dark;
     @media (any-hover: hover){
@@ -122,6 +143,8 @@ body {
   }
   // .btn_two
   &_two {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     background-color: rgba(255, 255, 255, 0.2);
     color: $green;
     @media (any-hover: hover){
@@ -159,3 +182,5 @@ body {
 %paddingSects {
   @include adaptiveValue("padding-bottom", 170, 100);
 }
+
+

@@ -128,6 +128,39 @@ function initSliders() {
 			},
 		});
 	}
+	if (document.querySelector('.testimonials__slider')) {
+		new Swiper('.testimonials__slider', { 
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 2,
+			// spaceBetween: 40,
+			// autoHeight: true,
+			// centeredSlides: true,
+			speed: 500,
+			loop: true,
+			navigation: {
+				prevEl: '.testimonials__body .swiper-button-prev',
+				nextEl: '.testimonials__body .swiper-button-next',
+			},
+			breakpoints: {
+				300: {
+					slidesPerView: 1.05,
+					spaceBetween: 10,
+					// autoHeight: true,
+				},
+				481: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+					// autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 40,
+				},
+			},
+		});
+	}
 
 
 	// if (document.querySelector('.what-slider-1')) {
