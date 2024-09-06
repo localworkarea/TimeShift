@@ -426,6 +426,9 @@ body * {
   width: 100%;
   left: 0
 }
+.header._header-scroll:before {
+  opacity: 1
+}
 .header:before {
   content: "";
   position: absolute;
@@ -438,7 +441,9 @@ body * {
   height: calc(100% + 40px);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  background: rgba(0,8,82,.4)
+  background: rgba(0,8,82,.4);
+  opacity: 0;
+  transition: opacity .3s ease
 }
 .header__container {
   display: flex;

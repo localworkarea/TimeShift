@@ -8,6 +8,9 @@
     @media (min-width:toEm(1024.98)){
       top: toRem(20);
     }
+    &:before {
+      opacity: 1;
+    }
   }
   @media (max-width: toEm(1024.98)){
       top: toRem(20) !important;
@@ -27,6 +30,8 @@
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     background: rgba(0, 8, 82, 0.4);
+    opacity: 0;
+    transition: opacity .3s ease;
   }
   // .header__container
   &__container {
