@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240905235355">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240906121142">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,10 +42,10 @@
 					<nav class="menu__body">
 						<div class="menu__container">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="#" class="menu__link" aria-label="навигация к разделу что вас ждет">Что вас ждет</a></li>
-								<li class="menu__item"><a href="#" class="menu__link" aria-label="навигация к разделу пакеты цен">Пакеты цен</a></li>
-								<li class="menu__item"><a href="#" class="menu__link" aria-label="навигация к разделу о нас">О нас</a></li>
-								<li class="menu__item"><a href="#" class="menu__link" aria-label="навигация к разделу забронировать">Забронировать</a></li>
+								<li class="menu__item"><a href="#" data-goto-header data-goto=".expectations" class="menu__link" aria-label="навигация к разделу что вас ждет">Что вас ждет</a></li>
+								<li class="menu__item"><a href="#" data-goto-header data-goto=".prices" class="menu__link" aria-label="навигация к разделу пакеты цен">Пакеты цен</a></li>
+								<li class="menu__item"><a href="#" data-goto-header data-goto=".about" class="menu__link" aria-label="навигация к разделу о нас">О нас</a></li>
+								<li class="menu__item"><a href="#" data-goto-header data-goto=".questions" class="menu__link" aria-label="навигация к разделу забронировать">Забронировать</a></li>
 							</ul>
 							<div class="menu__footer">
 								<div data-da=".menu__container,820.98,0" class="menu__block">
@@ -599,7 +599,8 @@
 										<input type="text" name="name" placeholder="Имя" required class="form-qs__input input">
 									</div>
 									<div class="form-qs__item">
-										<input type="date" name="date" required class="form-qs__input input">
+										<span class="input-placeholder">Дата</span>
+										<input type="date" name="date" required class="form-qs__input input" id="dateInput">
 									</div>
 								</div>
 								<div class="form-qs__item">
@@ -682,7 +683,7 @@
 						<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
 					</svg>
 				</button>
-				<div class="popup__text">
+				<div class="popup__body">
 					<p class="title-main">
 						Ваша заявка принята!
 					</p>
@@ -690,7 +691,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240905235355"></script>
+	<script src="js/app.min.js?_v=20240906121142"></script>
 </body>
 
 </html>

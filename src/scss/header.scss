@@ -130,23 +130,31 @@
 
       pointer-events: none;
       clip-path: circle(0% at 0 0);
+      opacity: 0;
       @extend %bgHeroHeaderMenu;
       @extend %bgGeneral;
-      &:before {
+      &::after {
         position: fixed;
       }
       @media (min-width:$mobileSmall){
-        transition: clip-path .65s ease;
+        transition: clip-path .65s ease, opacity 0s 0.65s;
         align-items: end;
         background-image: url(../img/bg/hero-pc-2.png);
       }
       @media (max-width:$mobileSmall){
-        transition: clip-path .5s ease;
+        transition: clip-path .5s ease, opacity 0s 0.5s;
         background-image: url(../img/bg/hero-mb-2.png);  
       }
       .menu-open & {
+        opacity: 1;
         pointer-events: all;
         clip-path: circle(150% at 0 0);
+        @media (min-width:$mobileSmall){
+          transition: clip-path .65s ease, opacity 0s 0s;
+        }
+        @media (max-width:$mobileSmall){
+          transition: clip-path .5s ease, opacity 0s 0s;
+        }
       }
     }
     // .menu__container
@@ -359,7 +367,7 @@
     font-weight: 500;
     @extend %buttonHeaderQ;
     ._show & {
-      background-color:$green;
+      background-color:#fff;
       color: $dark;
     }
   }
@@ -391,7 +399,7 @@
     transform: translateY(-100%);
     &:last-child {
       .lng__link {
-        border-bottom-left-radius: toRem(12);
+        // border-bottom-left-radius: toRem(12);
         border-bottom-right-radius: toRem(12);
       }
     }
@@ -424,7 +432,7 @@
     place-items: center;
     width: 100%;
     aspect-ratio: 1/1;
-    // border-radius: toRem(12);
+    border-radius: toRem(12);
     // backdrop-filter: blur(20px);
     // -webkit-backdrop-filter: blur(20px);
     // background: rgba(255, 255, 255, 0.2);
@@ -451,7 +459,7 @@
   transition: background-color .3s ease, color .3s ease;
   @media (any-hover: hover){
     &:hover{
-      background-color:$green;
+      background-color:#fff;
       color: $dark;
       .icon-menu__item {
         span,
@@ -472,7 +480,7 @@
 .icon-menu {
   @extend %buttonHeaderQ;
   .menu-open & {
-    background-color:$green;
+    background-color:#fff;
       color: $dark;
       .icon-menu__item {
         span,

@@ -696,6 +696,12 @@
     &::after {
       content:url(../img/icons/arr-dwn-sm.svg);
       transition: transform .3s ease;
+      transform-origin: 50% 50%;
+    }
+    ._showmore-active & {
+      &::after {
+        transform: scaleY(-1);
+      }
     }
     span {
       &:last-child {
@@ -1172,6 +1178,28 @@
   }
   // .form-qs__item
   &__item {
+    position: relative;
+    &._ios {
+      .input-placeholder {
+        opacity: 1;
+      }
+    }
+    &._form-focus,
+    &._data {
+      .input-placeholder {
+        opacity: 0;
+      }
+    }
+    .input-placeholder {
+      opacity: 0;
+      pointer-events: none;
+      display: inline-block;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translate(0,-50%);
+      color: rgba(255, 255, 255, 0.3);
+    }
   }
   // .form-qs__input
   &__input {

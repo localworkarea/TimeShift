@@ -176,6 +176,12 @@ textarea {
 input[type=date] {
   font-family: Rubik,sans-serif
 }
+input[type=date] {
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
 input[type=date]::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(30%);
   filter: invert(30%);
@@ -281,7 +287,7 @@ body::after {
   height: auto;
   aspect-ratio: 16/9
 }
-.popup-msg .popup__text {
+.popup-msg .popup__body {
   padding: 3.75rem;
   display: grid;
   place-items: center;
@@ -469,12 +475,14 @@ body * {
   overflow: auto;
   background-color: #010039;
   pointer-events: none;
-  clip-path: circle(0 at 0 0)
+  clip-path: circle(0 at 0 0);
+  opacity: 0
 }
-.menu__body:before {
+.menu__body::after {
   position: fixed
 }
 .menu-open .menu__body {
+  opacity: 1;
   pointer-events: all;
   clip-path: circle(150% at 0 0)
 }
@@ -582,7 +590,7 @@ body * {
   font-weight: 500
 }
 ._show .lng__btn {
-  background-color: #ddff7c;
+  background-color: #fff;
   color: #00074b
 }
 .lng__list {
@@ -613,7 +621,6 @@ body * {
   transform: translateY(-100%)
 }
 .lng__item:last-child .lng__link {
-  border-bottom-left-radius: .75rem;
   border-bottom-right-radius: .75rem
 }
 ._show .lng__item {
@@ -644,6 +651,7 @@ body * {
   place-items: center;
   width: 100%;
   aspect-ratio: 1/1;
+  border-radius: .75rem;
   transition: background-color .3s ease,color .3s ease
 }
 .icon-menu,
@@ -660,7 +668,7 @@ body * {
   transition: background-color .3s ease,color .3s ease
 }
 .menu-open .icon-menu {
-  background-color: #ddff7c;
+  background-color: #fff;
   color: #00074b
 }
 .menu-open .icon-menu .icon-menu__item span,
@@ -1113,7 +1121,13 @@ body * {
   content: url(../img/icons/arr-dwn-sm.svg);
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
-  transition: transform .3s ease,-webkit-transform .3s ease
+  transition: transform .3s ease,-webkit-transform .3s ease;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%
+}
+._showmore-active .item-prices__btn::after {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1)
 }
 .item-prices__btn span:last-child {
   display: none
@@ -1337,6 +1351,27 @@ body * {
   display: grid;
   gap: .625rem
 }
+.form-qs__item {
+  position: relative
+}
+.form-qs__item._ios .input-placeholder {
+  opacity: 1
+}
+.form-qs__item._data .input-placeholder,
+.form-qs__item._form-focus .input-placeholder {
+  opacity: 0
+}
+.form-qs__item .input-placeholder {
+  opacity: 0;
+  pointer-events: none;
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  color: rgba(255,255,255,.3)
+}
 ._sending .form-qs__submit {
   opacity: .5;
   pointer-events: none
@@ -1535,9 +1570,12 @@ body * {
     transition: top .65s ease
   }
   .menu__body {
-    transition: clip-path .65s ease;
+    transition: clip-path .65s ease,opacity 0s .65s;
     align-items: end;
     background-image: url(../img/bg/hero-pc-2.webp)
+  }
+  .menu-open .menu__body {
+    transition: clip-path .65s ease,opacity 0s 0s
   }
   .menu__container {
     row-gap: 5.625rem
@@ -2234,8 +2272,11 @@ body * {
     margin-bottom: 1.5625rem
   }
   .menu__body {
-    transition: clip-path .5s ease;
+    transition: clip-path .5s ease,opacity 0s .5s;
     background-image: url(../img/bg/hero-mb-2.webp)
+  }
+  .menu-open .menu__body {
+    transition: clip-path .5s ease,opacity 0s 0s
   }
   .menu__container {
     padding-top: 6.875rem
@@ -2669,19 +2710,10 @@ body * {
 }
 @media (any-hover:hover) {
   .btn:hover {
-    box-shadow: 0 0 10px 0 rgba(221,255,124,.5)
-  }
-  .btn_one:hover {
-    background-color: rgba(255,255,255,.2);
-    color: #ddff7c
-  }
-  .btn_two:hover {
-    background-color: #ddff7c;
-    color: #00074b
-  }
-  .btn_three:hover {
-    background-color: #ddff7c;
-    color: #00074b
+    box-shadow: 0 0 10px 0 rgba(221,255,124,.5);
+    color: #00074b;
+    background-color: #fff;
+    border-color: #fff
   }
   .header__tel:hover,
   .menu__contact:hover {
@@ -2699,7 +2731,7 @@ body * {
   }
   .icon-menu:hover,
   .lng__btn:hover {
-    background-color: #ddff7c;
+    background-color: #fff;
     color: #00074b
   }
   .icon-menu:hover .icon-menu__item span,

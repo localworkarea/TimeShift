@@ -126,6 +126,9 @@ body {
   @media (any-hover: hover){
     &:hover{
       box-shadow: 0 0px 10px 0 rgba(221, 255, 124, 0.5);
+      color: $dark;
+      background-color: #fff;
+      border-color: #fff;;
     }
   }
   // .btn_one
@@ -134,12 +137,12 @@ body {
     -webkit-backdrop-filter: blur(20px);
     background-color: $green;
     color: $dark;
-    @media (any-hover: hover){
-      &:hover{
-        background-color: rgba(255, 255, 255, 0.2);
-        color:$green;
-      }
-    }
+    // @media (any-hover: hover){
+    //   &:hover{
+    //     background-color: rgba(255, 255, 255, 0.2);
+    //     color:$green;
+    //   }
+    // }
   }
   // .btn_two
   &_two {
@@ -147,22 +150,22 @@ body {
     -webkit-backdrop-filter: blur(20px);
     background-color: rgba(255, 255, 255, 0.2);
     color: $green;
-    @media (any-hover: hover){
-      &:hover{
-        background-color: $green;
-        color: $dark;
-      }
-    }
+    // @media (any-hover: hover){
+    //   &:hover{
+    //     background-color: $green;
+    //     color: $dark;
+    //   }
+    // }
   }
   // .btn_three
   &_three {
     color: $green;
-    @media (any-hover: hover){
-      &:hover{
-        background-color: $green;
-        color: $dark;
-      }
-    }
+    // @media (any-hover: hover){
+    //   &:hover{
+    //     background-color: $green;
+    //     color: $dark;
+    //   }
+    // }
   }
 }
 

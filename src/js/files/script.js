@@ -34,4 +34,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
   }
+
+
+  const dateInput = document.getElementById('dateInput');
+
+  // Применяем логику только для устройств Apple
+  if (isMobile.iOS()) {
+    dateInput.parentElement.classList.add('_ios');
+      dateInput.addEventListener('blur', function () {
+          if (this.value) {
+              this.classList.add('_data');
+              this.parentElement.classList.add('_data');
+          } else {
+              // Если дата не выбрана, убираем класс _data
+              this.classList.remove('_data');
+              this.parentElement.classList.remove('_data');
+          }
+      });
+  }
+
+
+
 });
+

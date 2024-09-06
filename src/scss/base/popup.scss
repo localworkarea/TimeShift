@@ -96,13 +96,16 @@ body::after {
 			height: auto;
 			aspect-ratio: 16/9;
 		}
+	}
+	&__body {
+		
 		.popup-msg & {
 			padding: toRem(60);
 			display: grid;
 			place-items: center;
 			min-height: 100%;
 			p {
-
+	
 			}
 		}
 	}
