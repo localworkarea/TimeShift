@@ -15,6 +15,19 @@
   @media (min-width:$mobileSmall){
     transition: top .65s ease;
   }
+  &:before {
+    content:'';
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 100%;
+    height: calc(100% + 40px);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    background: rgba(0, 8, 82, 0.4);
+  }
   // .header__container
   &__container {
     display: flex;
