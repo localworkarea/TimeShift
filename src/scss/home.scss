@@ -604,20 +604,35 @@
   }
   // .prices__list
   &__list {
-    display: grid;
-    @include adaptiveValue("gap", 40, 18);
-    @media (min-width:toEm(820.98)){
-      grid-template-columns: repeat(3,1fr);
-    }
-    @media (max-width: toEm(820.98)) and (min-width: toEm(600.98)) {
-      grid-template-columns: repeat(2,1fr);
-    }
-    @media (max-width: toEm(600.98)){
-      grid-template-columns: 1fr; 
-    }
+    // display: grid;
+    // @include adaptiveValue("gap", 40, 18);
+    // @media (min-width:toEm(820.98)){
+    //   grid-template-columns: repeat(3,1fr);
+    // }
+    // @media (max-width: toEm(820.98)) and (min-width: toEm(600.98)) {
+    //   grid-template-columns: repeat(2,1fr);
+    // }
+    // @media (max-width: toEm(600.98)){
+    //   grid-template-columns: 1fr; 
+    // }
+    @extend %cardsGridThree;
   }
   // .prices__item
   &__item {
+  }
+}
+
+%cardsGridThree {
+  display: grid;
+  @include adaptiveValue("gap", 40, 18);
+  @media (min-width:toEm(820.98)){
+    grid-template-columns: repeat(3,1fr);
+  }
+  @media (max-width: toEm(820.98)) and (min-width: toEm(600.98)) {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @media (max-width: toEm(600.98)){
+    grid-template-columns: 1fr; 
   }
 }
 
@@ -1051,7 +1066,6 @@
   }
 }
 
-
 .rating {
   display: flex;
   align-items: flex-end;
@@ -1090,6 +1104,65 @@
     }
   }
 }
+
+
+// === LOCATIONS SECTION ===================================================
+.locations {
+  @extend %paddingSects;
+  // .locations__container
+  &__container {
+  }
+  // .locations__title
+  &__title {
+  }
+  // .locations__list
+  &__list {
+    @extend %cardsGridThree;
+  }
+  // .locations__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @extend %cardWrapperBody;
+  }
+  // .locations__img
+  &__img {
+    overflow: hidden;
+    border-bottom: toRem(2) solid rgb(221, 255, 124,0.7);
+    img {
+      aspect-ratio: 400/260;
+    }
+  }
+  // .locations__body
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("padding", 30, 18);
+  }
+  // .locations__sub-tile
+  &__sub-tile {
+    font-weight: 700;
+    color: $green;
+    @include adaptiveValue("font-size", 28, 22);
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+  // .locations__about
+  &__about {
+    flex: 1;
+    line-height: 1.1;
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+  // .locations__link
+  &__link {
+  }
+}
+
+
 
 
 // ==== QUESTIONS SECTION ===========================================

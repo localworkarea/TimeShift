@@ -174,9 +174,6 @@ textarea {
   opacity: 0
 }
 input[type=date] {
-  font-family: Rubik,sans-serif
-}
-input[type=date] {
   -webkit-appearance: none;
   display: flex;
   align-items: center;
@@ -382,6 +379,7 @@ body * {
 }
 .item-prices,
 .item-what,
+.locations__item,
 .questions__body {
   overflow: hidden;
   border-radius: 1.875rem;
@@ -1075,6 +1073,7 @@ body * {
 .item-what__btn {
   margin-top: 1.25rem
 }
+.locations__list,
 .prices__list {
   display: grid
 }
@@ -1353,6 +1352,36 @@ body * {
   top: 0;
   left: 0;
   color: #5b88fe
+}
+.locations__item {
+  display: flex;
+  flex-direction: column
+}
+.locations__img {
+  overflow: hidden;
+  border-bottom: .125rem solid rgba(221,255,124,.7)
+}
+.locations__img img {
+  aspect-ratio: 400/260
+}
+.locations__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column
+}
+.locations__sub-tile {
+  font-weight: 700;
+  color: #ddff7c
+}
+.locations__sub-tile:not(:last-child) {
+  margin-bottom: 1.25rem
+}
+.locations__about {
+  flex: 1;
+  line-height: 1.1
+}
+.locations__about:not(:last-child) {
+  margin-bottom: 1.25rem
 }
 .questions {
   position: relative
@@ -1730,6 +1759,7 @@ body * {
   .hero__logo {
     display: none
   }
+  .locations__list,
   .prices__list {
     grid-template-columns: repeat(3,1fr)
   }
@@ -1833,6 +1863,7 @@ body * {
   .benefits,
   .expectations,
   .faq,
+  .locations,
   .prices,
   .questions,
   .testimonials,
@@ -1902,6 +1933,7 @@ body * {
   .item-what__footer h3 {
     font-size: 1.75rem
   }
+  .locations__list,
   .prices__list {
     gap: 2.5rem
   }
@@ -1961,6 +1993,12 @@ body * {
   }
   .slide-testim__content {
     row-gap: 1.25rem
+  }
+  .locations__body {
+    padding: 1.875rem
+  }
+  .locations__sub-tile {
+    font-size: 1.75rem
   }
   .questions__form {
     padding: 2.5rem
@@ -2059,6 +2097,7 @@ body * {
   .benefits,
   .expectations,
   .faq,
+  .locations,
   .prices,
   .questions,
   .testimonials,
@@ -2131,6 +2170,7 @@ body * {
   .item-what__footer h3 {
     font-size: 1.25rem
   }
+  .locations__list,
   .prices__list {
     gap: 1.125rem
   }
@@ -2190,6 +2230,12 @@ body * {
   }
   .slide-testim__content {
     row-gap: .875rem
+  }
+  .locations__body {
+    padding: 1.125rem
+  }
+  .locations__sub-tile {
+    font-size: 1.375rem
   }
   .questions__form {
     padding: 1rem
@@ -2262,6 +2308,7 @@ body * {
   }
 }
 @media (max-width:37.56125em) {
+  .locations__list,
   .prices__list {
     grid-template-columns: 1fr
   }
@@ -2477,6 +2524,7 @@ body * {
   .benefits,
   .expectations,
   .faq,
+  .locations,
   .prices,
   .questions,
   .testimonials,
@@ -2546,6 +2594,7 @@ body * {
   .item-what__footer h3 {
     font-size: clamp(1.25rem ,1.09rem + .8vw ,1.75rem)
   }
+  .locations__list,
   .prices__list {
     gap: clamp(1.125rem ,.685rem + 2.2vw ,2.5rem)
   }
@@ -2605,6 +2654,12 @@ body * {
   }
   .slide-testim__content {
     row-gap: clamp(.875rem ,.755rem + .6vw ,1.25rem)
+  }
+  .locations__body {
+    padding: clamp(1.125rem ,.885rem + 1.2vw ,1.875rem)
+  }
+  .locations__sub-tile {
+    font-size: clamp(1.375rem ,1.255rem + .6vw ,1.75rem)
   }
   .questions__form {
     padding: clamp(1rem ,.52rem + 2.4vw ,2.5rem)
@@ -2723,6 +2778,7 @@ body * {
   }
 }
 @media (max-width:51.31125em)and (min-width:37.56125em) {
+  .locations__list,
   .prices__list {
     grid-template-columns: repeat(2,1fr)
   }

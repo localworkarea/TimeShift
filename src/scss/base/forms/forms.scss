@@ -37,29 +37,12 @@ textarea {
 		opacity: 0;
 	}
 }
-input[type="date"] {
-	font-family: "Rubik", sans-serif;
-}
-
-input[type="date"]::-webkit-datetime-edit {
-}
-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
-}
-input[type="date"]::-webkit-datetime-edit-text{
-	._form-focus & {
-	}
-}
 
 input[type="date"] {
 	-webkit-appearance: none;
-	// -moz-box-sizing:    border-box;
-  //  -webkit-box-sizing: border-box;
-  //   box-sizing:        border-box;
-	// padding: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	// -webkit-input-placeholder: ;
 }
 
 
