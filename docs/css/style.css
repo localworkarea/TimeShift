@@ -800,9 +800,6 @@ body * {
   font-weight: 800;
   line-height: 1.05
 }
-.hero__title span {
-  color: #ddff7c
-}
 .hero__subtitle {
   font-weight: 500;
   line-height: 1.1
@@ -1640,6 +1637,9 @@ body * {
   }
   .hero__title:not(:last-child) {
     margin-bottom: 1.875rem
+  }
+  .hero__title span {
+    color: #ddff7c
   }
   .hero__btns {
     grid-template-columns: 1fr 1fr

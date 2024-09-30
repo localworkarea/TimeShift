@@ -40,7 +40,9 @@
       @include adaptiveValue("margin-bottom", 30, 20,1400.98,480.98);
     }
     span {
-      color: $green;
+      @media (min-width:$mobileSmall){
+        color: $green;
+      }
     }
     @media (max-width: toEm(375.98)){
         font-size: toRem(30) !important;
