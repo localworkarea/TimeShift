@@ -800,9 +800,6 @@ body * {
   font-weight: 800;
   line-height: 1.05
 }
-.hero__title span {
-  color: #ddff7c
-}
 .hero__subtitle {
   font-weight: 500;
   line-height: 1.1
@@ -920,11 +917,6 @@ body * {
   display: flex;
   flex-wrap: wrap;
   justify-content: center
-}
-.expectations__list:before {
-  background-image: url(../img/bg/expect-bg.svg);
-  width: 350%;
-  height: 350%
 }
 .expectations__item {
   width: 100%;
@@ -1641,6 +1633,9 @@ body * {
   .hero__title:not(:last-child) {
     margin-bottom: 1.875rem
   }
+  .hero__title span {
+    color: #ddff7c
+  }
   .hero__btns {
     grid-template-columns: 1fr 1fr
   }
@@ -1649,6 +1644,11 @@ body * {
     width: 200%;
     height: 200%;
     opacity: .8
+  }
+  .expectations__list:before {
+    background-image: url(../img/bg/expect-bg.svg);
+    width: 350%;
+    height: 350%
   }
   .expectations__item {
     grid-template-columns: 1fr 58%

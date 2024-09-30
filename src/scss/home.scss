@@ -40,10 +40,15 @@
       @include adaptiveValue("margin-bottom", 30, 20,1400.98,480.98);
     }
     span {
-      // @media (min-width:$mobileSmall){
+      @media (min-width:$mobileSmall){
         color: $green;
-      // }
+      }
     }
+    // br {
+    //   @media (max-width:$mobileSmall){
+    //      display: none; 
+    //   }
+    // }
     @media (max-width: toEm(375.98)){
         font-size: toRem(30) !important;
     }
@@ -289,9 +294,11 @@
     @include adaptiveValue("gap", 40,20 );
     @extend %sectionsBgBefore;
     &:before {
-      background-image:url(../img/bg/expect-bg.svg);
-      width: 350%;
-      height: 350%;
+      @media (min-width:$mobileSmall){
+        background-image:url(../img/bg/expect-bg.svg);
+        width: 350%;
+        height: 350%;
+      }
     }
 	}
 	// .expectations__item
