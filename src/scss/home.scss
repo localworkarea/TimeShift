@@ -91,11 +91,13 @@
     height: min-content;
     @include adaptiveValue("gap", 60, 40,0,1440.98,480.98);
     @extend %sectionsBgBefore;
-    &:before {
-      background-image:url(../img/bg/about-hero-bg.png);
-      width: 200%;
-      height: 200%;
-      opacity: 0.8;
+    @media (min-width:$mobileSmall){
+      &:before {
+        background-image:url(../img/bg/about-hero-bg.png);
+        width: 200%;
+        height: 200%;
+        opacity: 0.8;
+      }
     }
 	}
   // .about-hero__item

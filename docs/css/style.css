@@ -821,12 +821,6 @@ body * {
   height: -webkit-min-content;
   height: min-content
 }
-.about-hero__body:before {
-  background-image: url(../img/bg/about-hero-bg.webp);
-  width: 200%;
-  height: 200%;
-  opacity: .8
-}
 .about-hero__item {
   position: relative
 }
@@ -1649,6 +1643,12 @@ body * {
   }
   .hero__btns {
     grid-template-columns: 1fr 1fr
+  }
+  .about-hero__body:before {
+    background-image: url(../img/bg/about-hero-bg.webp);
+    width: 200%;
+    height: 200%;
+    opacity: .8
   }
   .expectations__item {
     grid-template-columns: 1fr 58%
